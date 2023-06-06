@@ -1,15 +1,41 @@
 #include <iostream>
 using namespace std;
-#include"monster.h"
+#include "monster.h"
+#include "Thanos.h"
 
 int main() {
-  monster m("Strange",10,20);
-  //monster x[10]={{"JJ",20,20},{"Burin"}};
-  monster a("JJ",20,20),b("Sittipoj");
-  
-    monster *p;
-  p=new monster[3];
-  // how to create a monster object for p
-  // how to delete 
-  delete []p;
+  int n;
+  cout<<"How many monsters? ";
+  cin>>n;
+
+  monster *m=new monster[n]; //make sure they have hp
+  cout<<"*Insert story here*\n";
+  for(int i=0,j=1;i<n&&j<n;i++,j++){
+    m[i].Attack(m[i+1]);
+  }
+  for(int i=0,j=1;i<n&&j<n;i++,j++){
+    m[i].print();
+  }
+  Thanos T;
+    cout<<"*Insert Thanos story here*\n";
+  ++T;
+      cout<<"*Insert Thanos story here*\n";
+  ++T;
+  T.snap_finger(m,n);
+      cout<<"*Insert Thanos story here*\n";
+  ++T;
+      cout<<"*Insert Thanos story here*\n";
+  ++T;
+  T.snap_finger(m,n);
+      cout<<"*Insert Thanos story here*\n";
+  ++T;
+      cout<<"*Insert Thanos story here*\n";
+  ++T;
+  T.snap_finger(m,n);
+  for(int i=0;i<n;i++){
+    m[i].print();
+  }
+
+  delete [] m;
+
 }
